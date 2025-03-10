@@ -31,8 +31,12 @@
                 <div class="col-md-6">
                     <label for="title">Task Title:</label><br>
                     <input class="form-control" type="text" id="title" name="title"><br>
-                    <label for="states">description:</label><br>
-                    <input class="form-control " type="text" id="states" name="states"><br>
+                    <label for="states">states:</label><br>
+                    <select class="form-control" name="states" id="states">
+                        <option value="To_DO" >To DO</option>
+                        <option value="Doing">Doing</option>
+                        <option value="Done">Done</option>
+                    </select>
                 </div>
                 <div class="col-md-6">
                     <label for="startDate">start Date:</label><br>
@@ -48,8 +52,19 @@
         </form>
 
     </div>
-    <div class="container">
-        <div id="view"></div>
+    <div class="container mt-5">
+        <table class="table" >
+            <thead>
+                <th>task title</th>
+                <th>states</th>
+                <th>start Date</th>
+                <th>end Date</th>
+                <th></th>
+            </thead>
+            <tbody id="view">
+
+            </tbody>
+        </table>
     </div>
     
     <script src="index.js"></script>

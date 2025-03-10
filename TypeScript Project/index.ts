@@ -45,14 +45,14 @@ function view() {
     tasksList.innerHTML = "";
 
     tasks.forEach(t => {
-        const listItem = document.createElement("li");
+        const listItem = document.createElement("tr");
         const editbtn = document.createElement("button")
         const deletebtn  = document.createElement("button")
         if (editbtn != null && deletebtn != null) {
             // ✅ Add class
             
-            editbtn.classList.add('btn','btn-warning','float-end');
-            deletebtn.classList.add("btn",'btn-danger', "float-end");
+            editbtn.classList.add('btn','btn-warning','float-end', "ms-3");
+            deletebtn.classList.add("btn",'btn-danger', "float-end" );
             
             editbtn.innerHTML = "edit";
             deletebtn.innerHTML = "delete"
@@ -62,7 +62,7 @@ function view() {
         }
        
 
-        listItem.textContent = `${t.title} - ${t.states} - ${t.startDate} - ${t.endDate}`;
+        listItem.innerHTML = `<td>${t.title}</td> <td> ${t.states}</td> <td> ${t.startDate} </td> <td> ${t.endDate}<td>`;
         listItem.appendChild(editbtn)
         listItem.appendChild(deletebtn)
         tasksList?.appendChild(listItem);
