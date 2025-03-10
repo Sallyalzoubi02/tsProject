@@ -32,19 +32,19 @@ function view() {
     var tasksList = document.getElementById("view");
     tasksList.innerHTML = "";
     tasks.forEach(function (t) {
-        var listItem = document.createElement("li");
+        var listItem = document.createElement("tr");
         var editbtn = document.createElement("button");
         var deletebtn = document.createElement("button");
         if (editbtn != null && deletebtn != null) {
             // ✅ Add class
-            editbtn.classList.add('btn', 'btn-warning', 'float-end');
+            editbtn.classList.add('btn', 'btn-warning', 'float-end', "ms-3");
             deletebtn.classList.add("btn", 'btn-danger', "float-end");
             editbtn.innerHTML = "edit";
             deletebtn.innerHTML = "delete";
             editbtn.setAttribute('onclick', 'editTask(' + t.id + ')');
             deletebtn.setAttribute('onclick', 'removeTask(' + t.id + ')');
         }
-        listItem.textContent = "".concat(t.title, " - ").concat(t.states, " - ").concat(t.startDate, " - ").concat(t.endDate);
+        listItem.innerHTML = "<td>".concat(t.title, "</td> <td> ").concat(t.states, "</td> <td> ").concat(t.startDate, " </td> <td> ").concat(t.endDate, "<td>");
         listItem.appendChild(editbtn);
         listItem.appendChild(deletebtn);
         tasksList === null || tasksList === void 0 ? void 0 : tasksList.appendChild(listItem);
